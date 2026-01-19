@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Resume from './pages/Resume';
 import './App.css';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/resume" element={<Resume />} />
           </Routes>
           <Footer />
+          <Analytics />
         </BrowserRouter>
       </div>
     </ThemeProvider>
