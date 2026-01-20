@@ -15,7 +15,7 @@ export const personalInfo = {
 export const projects = [
   {
     id: 1,
-    name: "Agency Studio Website",
+    name: "Marketing Agency Website",
     description: "Designed and developed a fully custom WordPress theme from scratch using PHP. Implemented custom post types, reusable template components inspired by React, and focused on performance, accessibility, and SEO. Delivered a responsive, agency-quality website without page builders.",
     technologies: ["WordPress", "PHP", "HTML5", "CSS3", "JavaScript"],
     category: "PHP",
@@ -29,8 +29,8 @@ export const projects = [
     description: "Dayding is a revolutionary Christian dating platform designed to connect believers through shared faith, integrity, and love. It redefines modern dating with elegance, technological precision, and divine inspiration. It merges the discipline of engineering, the beauty of art, and the foundation of biblical principles into one platform that is as visually captivating as it is spiritually meaningful.",
     technologies: ["React Native", "PostgreSQL", "Node.js", "Express"],
     category: "React Native",
-    image: "https://customer-assets.emergentagent.com/job_fancy-dev-folio/artifacts/5m6gyrsm_Dayding%20Screenshot.png",
-    link: "#",
+    image: "/assets/dayding_screenshot.png",
+    link: "https://github.com/jera66/dayding-frontend",
     featured: true
   },
   {
@@ -39,8 +39,8 @@ export const projects = [
     description: "A luxury hotel booking application built with the MERN stack. Features include personalized guest dashboards, reward points system, digital room keys, booking management, and seamless check-in experience. Emphasizes elegant UI design, component reusability, clean state management, and premium user experience.",
     technologies: ["MongoDB", "Express", "React", "Node.js"],
     category: "React",
-    image: "https://customer-assets.emergentagent.com/job_fancy-dev-folio/artifacts/d4lf4faq_Rosathel%20Suites%20Screenshot.png",
-    link: "#",
+    image: "/assets/rosathel_suites.png",
+    link: "https://github.com/jera66/rosathel-suites-client",
     featured: true
   }
 ];

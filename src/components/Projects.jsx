@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { ExternalLink, Filter } from 'lucide-react';
 import { projects } from '../mockData';
 
+
+
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
 
