@@ -19,8 +19,8 @@ export const projects = [
     description: "Designed and developed a fully custom WordPress theme from scratch using PHP. Implemented custom post types, reusable template components inspired by React, and focused on performance, accessibility, and SEO. Delivered a responsive, agency-quality website without page builders.",
     technologies: ["WordPress", "PHP", "HTML5", "CSS3", "JavaScript"],
     category: "PHP",
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800",
-    link: "#",
+    image: "/assets/marketing_agency.png",
+    link: "https://github.com/jera66/marketing-agency",
     featured: true
   },
   {
