@@ -6,7 +6,7 @@ export const personalInfo = {
   location: "Derry, NH, United States",
   email: "jerathelczerny@yahoo.com",
   phone: "(917)751-7033",
-  bio: "Front End Web Developer with 5+ years of experience building responsive, mobile-first web applications using React, JavaScript, HTML5, CSS3, and WordPress/PHP. Passionate about crafting fast, accessible, user-focused websites that follow modern web standards and best practices. Experienced in collaborating with designers and project managers in agency-style workflows, maintaining existing websites, and building scalable front-end architectures with clean, efficient code.",
+  bio: "Front End Web Developer with 3+ years of experience building responsive, mobile-first web applications using React, JavaScript, HTML5, CSS3, and WordPress/PHP. Passionate about crafting fast, accessible, user-focused websites that follow modern web standards and best practices. Experienced in collaborating with designers and project managers in agency-style workflows, maintaining existing websites, and building scalable front-end architectures with clean, efficient code.",
   portfolio: "a-jerathel-portfolio.vercel.app",
   linkedin: "www.linkedin.com",
   github: "github.com"
