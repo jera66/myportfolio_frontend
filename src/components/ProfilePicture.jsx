@@ -9,7 +9,7 @@ const ProfilePicture = () => {
           className="absolute inset-0 rounded-full"
           style={{
             width: '220px',
-            height: '100px',
+            height: '200px',
             background: 'linear-gradient(45deg, rgba(139, 38, 53, 0.3), transparent, rgba(30, 58, 95, 0.3), transparent)',
             padding: '2px',
             animation: 'spin 12s linear infinite'
@@ -26,8 +26,8 @@ const ProfilePicture = () => {
           className="relative rounded-full overflow-hidden"
           style={{
             width: '200px',
-            height: '100px',
-            margin: '10px',
+            height: '200px',
+            margin: '5px',
             boxShadow: '4px 4px 16px var(--shadow-color-1), -4px -4px 16px var(--shadow-color-2)',
             border: '3px solid var(--bg-hero-via)'
           }}
