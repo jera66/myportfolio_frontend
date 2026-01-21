@@ -9,7 +9,7 @@ const ProfilePicture = () => {
           className="absolute inset-0 rounded-full"
           style={{
             width: '220px',
-            height: '200px',
+            height: '220px',
             background: 'linear-gradient(45deg, rgba(139, 38, 53, 0.3), transparent, rgba(30, 58, 95, 0.3), transparent)',
             padding: '2px',
             animation: 'spin 12s linear infinite'
