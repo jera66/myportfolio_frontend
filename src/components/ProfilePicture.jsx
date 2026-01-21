@@ -27,7 +27,7 @@ const ProfilePicture = () => {
           style={{
             width: '200px',
             height: '200px',
-            margin: '5px',
+            margin: '10px',
             boxShadow: '4px 4px 16px var(--shadow-color-1), -4px -4px 16px var(--shadow-color-2)',
             border: '3px solid var(--bg-hero-via)'
           }}
