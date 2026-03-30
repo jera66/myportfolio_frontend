@@ -45,10 +45,13 @@ const About = () => {
             </h3>
             <div className="space-y-4 leading-relaxed text-center" style={{ color: 'var(--text-muted)' }}>
               <p>
-                {personalInfo.bio}
+               Full‑stack software developer with 5+ years of experience building scalable, high‑performance applications across modern web, mobile, and backend ecosystems. I specialize in designing clean architectures, developing reliable APIs, and crafting intuitive, responsive user interfaces that deliver real business value.
+I bring strong engineering fundamentals, a product‑focused mindset, and a track record of owning features end‑to‑end—from planning and architecture to implementation, testing, deployment, and long‑term maintenance. I thrive in collaborative environments, work seamlessly with designers and stakeholders, and write clean, maintainable code that scales with the product.
+I’m passionate about performance, accessibility, automation, and building systems that are robust, secure, and easy to evolve. Whether improving an existing codebase or architecting something new, I focus on clarity, reliability, and delivering solutions that make teams faster and users happier.
+
               </p>
               <p>
-                With expertise in React, JavaScript, HTML5, CSS3, and WordPress/PHP, I transform ideas into functional, beautiful web applications that users love.
+                With expertise in React, JavaScript, HTML5, CSS3, WordPress/PHP, java, and C#. I transform ideas into functional, beautiful web applications that users love.
               </p>
               <p>
                 My approach combines technical excellence with user-centric design, ensuring every project delivers measurable business impact.
