@@ -2,11 +2,11 @@
 
 export const personalInfo = {
   name: "Jerathel Czerny",
-  title: "Front End Developer",
+  title: "Full Stack Software Developer",
   location: "Derry, NH, United States",
   email: "jerathelczerny@yahoo.com",
   phone: "(917)751-7033",
-  bio: "Front End Web Developer with 5+ years of experience building responsive, mobile-first web applications using React, JavaScript, HTML5, CSS3, WordPress/PHP, Java, and C#. Passionate about crafting fast, accessible, user-focused websites that follow modern web standards and best practices. Experienced in collaborating with designers and project managers in agency-style workflows, maintaining existing websites, and building scalable front-end architectures with clean, efficient code.",
+  bio: "Full Stack Software Developer with 5+ years of experience building responsive, mobile-first web applications using React, JavaScript, HTML5, CSS3, WordPress/PHP, Java, and C#. Passionate about crafting fast, accessible, user-focused websites that follow modern web standards and best practices. Experienced in collaborating with designers and project managers in agency-style workflows, maintaining existing websites, and building scalable front-end architectures with clean, efficient code.",
   portfolio: "a-jerathel-portfolio.vercel.app",
   linkedin: "www.linkedin.com",
   github: "github.com"
@@ -38,6 +38,16 @@ export const projects = [
     name: "Rosathel Suites",
     description: "A luxury hotel booking application built with the MERN stack. Features include personalized guest dashboards, reward points system, digital room keys, booking management, and seamless check-in experience. Emphasizes elegant UI design, component reusability, clean state management, and premium user experience.",
     technologies: ["MongoDB", "Express", "React", "Node.js"],
+    category: "React",
+    image: "/assets/rosathel_suites.png",
+    link: "https://github.com/jera66/rosathel-suites-client",
+    featured: true
+  },
+  {
+    id: 4,
+    name: "Software Developer Portfolio",
+    description: "A stunning, fully responsive, production-ready portfolio website featuring a unique neumorphic design with navy blue and burgundy theme colors. Built with modern web technologies to showcase professional experience, projects, and skills with an emphasis on beautiful UI/UX design.ent, and seamless check-in experience. Emphasizes elegant UI design, component reusability, clean state management, and premium user experience.",
+    technologies: ["React", "React Router DOM", "Tailwind CSS", "Lucide React", "Axios", "Shadcn/ui components","FastApi", "MongoDB with motor", "Pydantic"],
     category: "React",
     image: "/assets/rosathel_suites.png",
     link: "https://github.com/jera66/rosathel-suites-client",
@@ -88,11 +98,18 @@ export const education = [
     institution: "Southern New Hampshire University",
     period: "Apr 2019 - Jan 2023",
     format: "Online"
+  },
+   {
+    id: 3,
+    degree: "Certificate of Software Engineering",
+    institution: "General Assembly/Bootcamp",
+    period: "Sep 2021 - Dec 2021",
+    format: "Online"
   }
 ];
 
 export const skills = {
-  languages: ["JavaScript", "React", "HTML5", "CSS3", "WordPress", "PHP", "Git", "Java"],
+  languages: ["JavaScript", "React", "HTML5", "CSS3", "WordPress", "PHP", "Git", "Java", "Python", "C#"],
   design: ["Mobile-First Design", "Responsive Design", "Accessibility", "Cross-Browser Compatibility", "Performance Optimization", "Component-Based Architecture", "Agile Workflows"],
   tools: ["Gulp", "Grunt", "Postman", "Figma"]
 };
