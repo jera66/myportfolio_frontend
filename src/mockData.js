@@ -35,7 +35,7 @@ export const projects = [
   },
   {
     id: 3,
-    name: "Rosathel Suites",
+    name: "Rosathel PMS",
     description: "A luxury hotel booking application built with the MERN stack. Features include personalized guest dashboards, reward points system, digital room keys, booking management, and seamless check-in experience. Emphasizes elegant UI design, component reusability, clean state management, and premium user experience.",
     technologies: ["MongoDB", "Express", "React", "Node.js"],
     category: "React",
@@ -49,8 +49,18 @@ export const projects = [
     description: "A stunning, fully responsive, production-ready portfolio website featuring a unique neumorphic design with navy blue and burgundy theme colors. Built with modern web technologies to showcase professional experience, projects, and skills with an emphasis on beautiful UI/UX design.ent, and seamless check-in experience. Emphasizes elegant UI design, component reusability, clean state management, and premium user experience.",
     technologies: ["React", "React Router DOM", "Tailwind CSS", "Lucide React", "Axios", "Shadcn/ui components","FastApi", "MongoDB with motor", "Pydantic"],
     category: "React",
-    image: "/assets/rosathel_suites.png",
-    link: "https://github.com/jera66/rosathel-suites-client",
+    image: "/assets/portfolio_screenshot.png",
+    link: "https://github.com/jera66/myportfolio_frontend",
+    featured: true
+  },
+  {
+    id: 5,
+    name: "VLOSA - Virtual Life Operating System Agent",
+    description: "is a comprehensive personal automation platform designed to manage your digital life intelligently. It combines inbox management, task tracking, AI-powered communication assistance, and rule-based automation into a unified system available on both web and mobile. VLOSA uses advanced AI to help you stay organized, prioritize tasks, and automate routine activities, making it an essential tool for anyone looking to optimize their productivity and digital organization.",
+    technologies: ["Vite", "React Router DOM", "React Lucid", "Tailwind CSS", "Motion"],
+    category: "Enterprise Software",
+    image: "/assets/vlosa_screenshot.png",
+    link: "https://github.com/jera66/vlosa",
     featured: true
   }
 ];
