@@ -58,7 +58,7 @@ export const projects = [
     name: "VLOSA - Virtual Life Operating System Agent",
     description: "is a comprehensive personal automation platform designed to manage your digital life intelligently. It combines inbox management, task tracking, AI-powered communication assistance, and rule-based automation into a unified system available on both web and mobile. VLOSA uses advanced AI to help you stay organized, prioritize tasks, and automate routine activities, making it an essential tool for anyone looking to optimize their productivity and digital organization.",
     technologies: ["Vite", "React Router DOM", "React Lucid", "Tailwind CSS", "Motion"],
-    category: "Enterprise Software",
+    category: "Enterprise",
     image: "/assets/vlosa_screenshot.png",
     link: "https://github.com/jera66/vlosa",
     featured: true
