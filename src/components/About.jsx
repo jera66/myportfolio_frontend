@@ -61,7 +61,7 @@ const About = () => {
               Crafting Digital Experiences
             </h3>
             <div
-              className='space-y-6 leading-relaxed text-center'
+              className='space-y-4 leading-relaxed text-center'
               style={{ color: 'var(--text-muted)' }}
             >
               <p>
