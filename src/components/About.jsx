@@ -88,7 +88,7 @@ const About = () => {
                 project delivers measurable business impact.
               </p>
             </div>
-
+            <br />
             {/* Highlights */}
             <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-6'>
               {highlights.map((item, index) => (
