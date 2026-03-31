@@ -10,12 +10,12 @@ const Resume = () => {
 
   const handleDownload = () => {
     // Download the PDF with a clean filename
-    const pdfUrl = 'Jerathel-Czerny-Resume.pdf';
+    const pdfUrl = 'Jerathel-Czerny-Software Engineer.pdf';
     
     // Create a temporary link to download with custom filename
     const link = document.createElement('a');
     link.href = pdfUrl;
-    link.download = 'Jerathel-Czerny-Resume.pdf';
+    link.download = 'Jerathel-Czerny-Software Engineer.pdf';
     link.target = '_blank';
     document.body.appendChild(link);
     link.click();
