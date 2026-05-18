@@ -37,7 +37,7 @@ import axios from 'axios';
  * Set in frontend/.env as REACT_APP_BACKEND_URL
  */
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}api`;
+const API = `${BACKEND_URL}/api`;
 
 const Contact = () => {
   // =========================================
