@@ -1,58 +1,115 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Download, Mail, Phone, MapPin, ExternalLink, Calendar } from 'lucide-react';
 import { personalInfo, experience, education, skills } from '../mockData';
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const RESUME_DOWNLOAD_URL = `${BACKEND_URL}/api/download/resume`;
+
 const Resume = () => {
+  const [downloading, setDownloading] = useState(false);
+  
+
+  // Reveal-on-scroll
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.disconnect(); } },
+      { threshold: 0.05 }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+  const reveal = (delayMs) => ({ animationDelay: `${delayMs}ms` });
+
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
 
-  const handleDownload = () => {
-    // Download the PDF with a clean filename
-    const pdfUrl = 'Jerathel-Czerny-Resume.pdf';
-    
-    // Create a temporary link to download with custom filename
-    const link = document.createElement('a');
-    link.href = pdfUrl;
-    link.download = 'Jerathel-Czerny-Resume.pdf';
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  // Bulletproof download: fetch the streamed PDF as a Blob and trigger a real
+  // save-as dialog. Falls back to opening the URL in a new tab if anything
+  // goes wrong (e.g. mobile browser blocks blob downloads).
+  const handleDownload = async (e) => {
+    e.preventDefault();
+    if (downloading) return;
+    setDownloading(true);
+    try {
+      const response = await fetch(RESUME_DOWNLOAD_URL, { mode: 'cors', cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = 'Jerathel-Czerny-Software Engineer.pdf';
+      link.rel = 'noopener';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      // Revoke after a tick so the click has time to register
+      setTimeout(() => window.URL.revokeObjectURL(blobUrl), 1000);
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error('Resume download failed, opening in a new tab:', err);
+      window.open(RESUME_DOWNLOAD_URL, '_blank', 'noopener,noreferrer');
+    } finally {
+      setDownloading(false);
+    }
   };
 
   return (
-    <div className="min-h-screen py-20" style={{ backgroundColor: 'var(--bg-section)' }}>
-      <div className="container mx-auto px-6">
+    <div ref={sectionRef} className={`min-h-screen py-20 relative overflow-hidden ${isVisible ? 'about-visible' : ''}`} style={{ backgroundColor: 'var(--bg-section)' }}>
+      {/* Unified theme: drifting radial blobs (navy + burgundy) */}
+      <div aria-hidden="true" className="absolute pointer-events-none rounded-full"
+           style={{ top: '8%', left: '-120px', width: 460, height: 460,
+                    background: 'radial-gradient(circle, rgba(30,58,95,0.30) 0%, rgba(30,58,95,0) 70%)',
+                    filter: 'blur(40px)' }} />
+      <div aria-hidden="true" className="absolute pointer-events-none rounded-full"
+           style={{ bottom: '5%', right: '-120px', width: 520, height: 520,
+                    background: 'radial-gradient(circle, rgba(139,38,53,0.20) 0%, rgba(139,38,53,0) 70%)',
+                    filter: 'blur(40px)' }} />
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
+          {/* Eyebrow */}
+          <div className="flex justify-center mb-6">
+            <div className="about-reveal section-eyebrow" style={reveal(0)} data-testid="resume-eyebrow">Resume</div>
+          </div>
+
           {/* Header with Download Button */}
           <div className="flex justify-between items-start mb-12">
-            <div>
+            <div className="about-reveal" style={reveal(120)}>
               <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
                 {personalInfo.name}
               </h1>
               <p className="text-xl font-semibold" style={{ color: 'var(--text-secondary)' }}>{personalInfo.title}</p>
             </div>
-            <button
+            <a
+              href={RESUME_DOWNLOAD_URL}
+              download="Jerathel-Czerny-Resume.pdf"
               onClick={handleDownload}
-              className="px-6 py-3 rounded-lg transition-all duration-300 flex items-center gap-2"
+              data-testid="resume-download-btn"
+              rel="noopener"
+              className="about-reveal px-6 py-3 rounded-lg transition-all duration-300 flex items-center gap-2 cursor-pointer hover:scale-[1.02] active:scale-[0.98] no-underline select-none"
               style={{
+                ...reveal(220),
                 backgroundColor: '#8b2635',
                 color: '#ffffff',
-                boxShadow: '3px 3px 10px rgba(10, 15, 26, 0.4), -3px -3px 10px rgba(155, 54, 69, 0.2)'
+                boxShadow: '3px 3px 10px rgba(10, 15, 26, 0.4), -3px -3px 10px rgba(155, 54, 69, 0.2)',
+                opacity: downloading ? 0.7 : 1,
+                pointerEvents: downloading ? 'none' : 'auto'
               }}
             >
-              <Download size={20} />
-              Download PDF
-            </button>
+              <Download size={20} className={downloading ? 'animate-pulse' : ''} />
+              {downloading ? 'Preparing…' : 'Download PDF'}
+            </a>
           </div>
 
           {/* Resume Content */}
-          <div className="rounded-2xl overflow-hidden" style={{
-            backgroundColor: 'var(--bg-card)',
-            boxShadow: '4px 4px 16px var(--shadow-color-1), -4px -4px 16px var(--shadow-color-2)'
-          }}>
+          <div className="about-reveal rounded-2xl overflow-hidden section-glass-card" style={reveal(360)}>
             <div className="p-8 md:p-12">
               {/* Contact Information */}
               <div className="flex flex-wrap gap-6 mb-8 pb-8" style={{ borderBottom: '1px solid rgba(30, 58, 95, 0.2)' }}>
@@ -169,9 +226,9 @@ const Resume = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>Design & Methodologies</h3>
+                    <h3 className="font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>Tools & Libraries</h3>
                     <div className="flex flex-wrap gap-2">
-                      {skills.design.map((skill, index) => (
+                      {skills.tools.map((skill, index) => (
                         <span
                           key={index}
                           className="px-4 py-2 rounded-lg text-sm"
@@ -187,9 +244,9 @@ const Resume = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>Tools & Libraries</h3>
+                    <h3 className="font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>Other Skills</h3>
                     <div className="flex flex-wrap gap-2">
-                      {skills.tools.map((skill, index) => (
+                      {skills.otherSkills.map((skill, index) => (
                         <span
                           key={index}
                           className="px-4 py-2 rounded-lg text-sm"

@@ -2,45 +2,68 @@
 
 export const personalInfo = {
   name: "Jerathel Czerny",
-  title: "Front End Developer",
+  title: "Software Developer",
   location: "Derry, NH, United States",
   email: "jerathelczerny@yahoo.com",
   phone: "(917)751-7033",
-  bio: "Front End Web Developer with 3+ years of experience building responsive, mobile-first web applications using React, JavaScript, HTML5, CSS3, and WordPress/PHP. Passionate about crafting fast, accessible, user-focused websites that follow modern web standards and best practices. Experienced in collaborating with designers and project managers in agency-style workflows, maintaining existing websites, and building scalable front-end architectures with clean, efficient code.",
+  bio: "Skilled and innovative software developer with 5+ years of experience, proficient in creating robust and scalable applications. Experienced in analyzing, designing, and implementing code architecture. Demonstrated expertise in optimizing and improving application performance. Detail-oriented with a passion for writing clean and maintainable code. Proven track record of delivering high-quality software solutions within deadlines. Excellent team player with effective communication and collaboration skills. Strong problem-solving capabilities and a continuous learner of emerging technologies.",
   portfolio: "a-jerathel-portfolio.vercel.app",
-  linkedin: "www.linkedin.com",
-  github: "github.com"
+  linkedin: "https://www.linkedin.com/in/jerathel-czerny-323132163",
+  github: "github.com/jera66",
 };
 
 export const projects = [
   {
     id: 1,
     name: "Marketing Agency Website",
-    description: "Designed and developed a fully custom WordPress theme from scratch using PHP. Implemented custom post types, reusable template components inspired by React, and focused on performance, accessibility, and SEO. Delivered a responsive, agency-quality website without page builders.",
+    description:
+      "Designed and developed a fully custom WordPress theme from scratch using PHP. Implemented custom post types, reusable template components inspired by React, and focused on performance, accessibility, and SEO. Delivered a responsive, agency-quality website without page builders.",
     technologies: ["WordPress", "PHP", "HTML5", "CSS3", "JavaScript"],
     category: "PHP",
     image: "/assets/marketing_agency.png",
     link: "https://github.com/jera66/marketing-agency",
-    featured: true
+    featured: true,
   },
   {
     id: 2,
     name: "Dayding",
-    description: "Dayding is a revolutionary Christian dating platform designed to connect believers through shared faith, integrity, and love. It redefines modern dating with elegance, technological precision, and divine inspiration. It merges the discipline of engineering, the beauty of art, and the foundation of biblical principles into one platform that is as visually captivating as it is spiritually meaningful.",
+    description:
+      "Dayding is a revolutionary Christian dating platform designed to connect believers through shared faith, integrity, and love. It redefines modern dating with elegance, technological precision, and divine inspiration. It merges the discipline of engineering, the beauty of art, and the foundation of biblical principles into one platform that is as visually captivating as it is spiritually meaningful.",
     technologies: ["React Native", "PostgreSQL", "Node.js", "Express"],
     category: "React Native",
     image: "/assets/dayding_screenshot.png",
     link: "https://github.com/jera66/dayding-frontend",
-    featured: true
+    featured: true,
   },
   {
     id: 3,
-    name: "Rosathel Suites",
-    description: "A luxury hotel booking application built with the MERN stack. Features include personalized guest dashboards, reward points system, digital room keys, booking management, and seamless check-in experience. Emphasizes elegant UI design, component reusability, clean state management, and premium user experience.",
+    name: "Rosathel PMS",
+    description:
+      "A luxury hotel booking application built with the MERN stack. Features include personalized guest dashboards, reward points system, digital room keys, booking management, and seamless check-in experience. Emphasizes elegant UI design, component reusability, clean state management, and premium user experience.",
     technologies: ["MongoDB", "Express", "React", "Node.js"],
     category: "React",
     image: "/assets/rosathel_suites.png",
     link: "https://github.com/jera66/rosathel-suites-client",
+    featured: true,
+  },
+{
+    id: 4,
+    name: "Software Developer Portfolio",
+    description: "A stunning, fully responsive, production-ready portfolio website featuring a unique neumorphic design with navy blue and burgundy theme colors. Built with modern web technologies to showcase professional experience, projects, and skills with an emphasis on beautiful UI/UX design.ent, and seamless check-in experience. Emphasizes elegant UI design, component reusability, clean state management, and premium user experience.",
+    technologies: ["React", "React Router DOM", "Tailwind CSS", "Lucide React", "Axios", "Shadcn/ui components","FastApi", "MongoDB with motor", "Pydantic"],
+    category: "React",
+    image: "/assets/portfolio_screenshot.png",
+    link: "https://github.com/jera66/myportfolio_frontend",
+    featured: true
+  },
+  {
+    id: 5,
+    name: "VLOSA - Virtual Life Operating System Agent",
+    description: "is a comprehensive personal automation platform designed to manage your digital life intelligently. It combines inbox management, task tracking, AI-powered communication assistance, and rule-based automation into a unified system available on both web and mobile. VLOSA uses advanced AI to help you stay organized, prioritize tasks, and automate routine activities, making it an essential tool for anyone looking to optimize their productivity and digital organization.",
+    technologies: ["Vite", "React Router DOM", "React Lucid", "Tailwind CSS", "Motion"],
+    category: "Enterprise",
+    image: "/assets/vlosa_screenshot.png",
+    link: "https://github.com/jera66/vlosa",
     featured: true
   }
 ];
@@ -48,19 +71,32 @@ export const projects = [
 export const experience = [
   {
     id: 1,
+    title: "Software Developer",
+    company: "Czerny Systems",
+    period: "Jan 2026 - Present",
+    location: "Remote",
+    responsibilities: [
+      "Design and implement scalable full‑stack applications and services using React, Node.js, Python, and",
+      "cloud‑native architectures.Develop RESTful APIs and microservices, improving system reliability and maintainability through modular design and automated testing.",
+      "Collaborate with product managers, architects, QA engineers, and stakeholders to gather requirements and drive technical design and delivery.",
+      "Manage CI/CD pipelines and deployment automation to increase release predictability and reduce manual intervention.",
+      "production incidents and implement performance optimizations to improve application stability and responsiveness.",
+    ],
+
+    id: 2,
     title: "Front End Developer",
     company: "Independent / Project-Based",
-    period: "2022 - Present",
+    period: " Feb 2022 - May 2026",
     location: "Remote",
     responsibilities: [
       "Developed React interfaces and API integrations that reduced page load times and improved data accuracy.",
       "Built reusable component library to accelerate feature delivery and simplify cross-team maintenance.",
       "Implemented automated testing and CI/CD pipelines to increase deployment reliability and shorten release cycles.",
-      "Collaborated with stakeholders to translate requirements into secure, scalable web solutions with measurable business impact."
-    ]
+      "Collaborated with stakeholders to translate requirements into secure, scalable web solutions with measurable business impact.",
+    ],
   },
   {
-    id: 2,
+    id: 3,
     title: "React Developer",
     company: "Ali Tech Solutions",
     period: "Mar 2023 - Aug 2024",
@@ -69,9 +105,9 @@ export const experience = [
       "Developed multi-tier API services to integrate large datasets, improving data availability for web apps.",
       "Built React-based interfaces that improved user task completion rates and responsiveness.",
       "Designed and deployed scalable backend components that increased throughput with measurable results.",
-      "Collaborated with cross-functional teams to deliver client-specific web applications on schedule."
-    ]
-  }
+      "Collaborated with cross-functional teams to deliver client-specific web applications on schedule.",
+    ],
+  },
 ];
 
 export const education = [
@@ -80,19 +116,46 @@ export const education = [
     degree: "Data Science",
     institution: "Arizona State University Digital Immersion",
     period: "Jan 2025 - Aug 2025",
-    format: "Online"
+    format: "Online",
   },
   {
     id: 2,
     degree: "Software Engineering",
     institution: "Southern New Hampshire University",
     period: "Apr 2019 - Jan 2023",
-    format: "Online"
-  }
+    format: "Online",
+  },
 ];
 
 export const skills = {
-  languages: ["JavaScript", "React", "HTML5", "CSS3", "WordPress", "PHP", "Git", "Java"],
-  design: ["Mobile-First Design", "Responsive Design", "Accessibility", "Cross-Browser Compatibility", "Performance Optimization", "Component-Based Architecture", "Agile Workflows"],
-  tools: ["Gulp", "Grunt", "Postman", "Figma"]
+  languages: [
+    "JavaScript",
+    "React",
+    "HTML5",
+    "CSS3",
+    "WordPress",
+    "PHP",
+    "Git",
+    "Java",
+  ],
+  design: [
+    "Mobile-First Design",
+    "Responsive Design",
+    "Accessibility",
+    "Cross-Browser Compatibility",
+    "Performance Optimization",
+    "Component-Based Architecture",
+    "Agile Workflows",
+  ],
+  tools: ["Gulp", "Grunt", "Postman", "Figma"],
+
+  otherSkills: [
+    "Problem Solving",
+    "Team Collaboration",
+    "Effective Communication",
+    "Time Management",
+    "Adaptability",
+    "Continuous Learning",
+  ],
 };
+

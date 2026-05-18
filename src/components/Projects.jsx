@@ -7,7 +7,7 @@ import { projects } from '../mockData';
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const categories = ['All', 'React', 'WordPress', 'React Native', 'PHP'];
+  const categories = ['All', 'React', 'WordPress', 'React Native', 'PHP', 'Enterprise'];
 
   const filteredProjects = activeFilter === 'All'
     ? projects

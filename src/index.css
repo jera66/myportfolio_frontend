@@ -60,6 +60,9 @@ code {
     --text-muted: #4a5568;
     --shadow-color-1: rgba(30, 58, 95, 0.15);
     --shadow-color-2: rgba(255, 255, 255, 0.9);
+    /* Unified glass card theme (matches About section) */
+    --glass-bg: rgba(30, 58, 95, 0.05);
+    --glass-border: rgba(139, 38, 53, 0.22);
   }
 
   /* Dark Theme */
@@ -100,7 +103,48 @@ code {
     --text-muted: #a0aec0;
     --shadow-color-1: #0a0f1a;
     --shadow-color-2: #2e4a6f;
+    /* Unified glass card theme (matches About section) */
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(139, 38, 53, 0.28);
     }
+}
+
+/* Reusable unified section styling */
+.section-glass-card {
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 18px 42px rgba(10, 15, 26, 0.18),
+    0 6px 14px rgba(10, 15, 26, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.dark .section-glass-card {
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, 0.55),
+    0 8px 18px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 1rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border: 1px solid rgba(139, 38, 53, 0.35);
+  background-color: rgba(139, 38, 53, 0.08);
+}
+.section-eyebrow::before {
+  content: '';
+  width: 6px; height: 6px; border-radius: 999px;
+  background: #8b2635;
 }
 
 @layer base {
@@ -111,3 +155,106 @@ code {
     @apply bg-background text-foreground;
     }
 }
+
+/* =============================================
+   ABOUT SECTION ANIMATIONS
+   ============================================= */
+
+@keyframes aboutFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes aboutFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes blobDrift {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(40px, -30px) scale(1.08); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes blobDriftAlt {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-50px, 30px) scale(1.12); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes pulseRing {
+  0%   { transform: translate(-50%, -50%) scale(0.95); opacity: 0.55; }
+  70%  { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes caret {
+  0%, 50%   { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.about-reveal {
+  opacity: 0;
+}
+
+.about-visible .about-reveal {
+  animation: aboutFadeInUp 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.about-blob-1 {
+  animation: blobDrift 14s ease-in-out infinite;
+}
+
+.about-blob-2 {
+  animation: blobDriftAlt 18s ease-in-out infinite;
+}
+
+.about-pulse-ring {
+  animation: pulseRing 2.6s ease-out infinite;
+}
+
+.about-gradient-border {
+  background: linear-gradient(120deg, #1e3a5f, #8b2635, #1e3a5f, #8b2635);
+  background-size: 300% 300%;
+  animation: gradientShift 9s ease infinite;
+}
+
+.about-caret {
+  animation: caret 1s steps(1) infinite;
+}
+
+/* =============================================
+   CONTACT SUBMISSION OVERLAY (dual rings)
+   ============================================= */
+@keyframes ring-cw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes ring-ccw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+@keyframes overlay-fade-in {
+  from { opacity: 0; backdrop-filter: blur(0); }
+  to   { opacity: 1; backdrop-filter: blur(10px); }
+}
+
+.contact-submit-overlay {
+  animation: overlay-fade-in 280ms ease-out forwards;
+}
+.contact-ring-cw  { animation: ring-cw 1.6s linear infinite; transform-origin: center; }
+.contact-ring-ccw { animation: ring-ccw 1.2s linear infinite; transform-origin: center; }
