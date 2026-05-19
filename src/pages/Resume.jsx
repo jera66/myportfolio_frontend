@@ -7,7 +7,6 @@ const RESUME_DOWNLOAD_URL = `${BACKEND_URL}/api/download/resume`;
 
 const Resume = () => {
   const [downloading, setDownloading] = useState(false);
-  
 
   // Reveal-on-scroll
   const [isVisible, setIsVisible] = useState(false);
@@ -44,7 +43,7 @@ const Resume = () => {
 
       const link = document.createElement('a');
       link.href = blobUrl;
-      link.download = 'Jerathel-Czerny-Software Engineer.pdf';
+      link.download = 'Jerathel-Czerny-Resume.pdf';
       link.rel = 'noopener';
       document.body.appendChild(link);
       link.click();

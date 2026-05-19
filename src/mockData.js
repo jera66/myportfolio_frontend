@@ -82,6 +82,8 @@ export const experience = [
       "Manage CI/CD pipelines and deployment automation to increase release predictability and reduce manual intervention.",
       "production incidents and implement performance optimizations to improve application stability and responsiveness.",
     ],
+  },
+  {
 
     id: 2,
     title: "Front End Developer",
