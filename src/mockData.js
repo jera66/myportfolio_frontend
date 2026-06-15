@@ -24,17 +24,7 @@ export const projects = [
     link: "https://github.com/jera66/marketing-agency",
     featured: true,
   },
-  // {
-  //   id: 2,
-  //   name: "Dayding",
-  //   description:
-  //     "Dayding is a revolutionary Christian dating platform designed to connect believers through shared faith, integrity, and love. It redefines modern dating with elegance, technological precision, and divine inspiration. It merges the discipline of engineering, the beauty of art, and the foundation of biblical principles into one platform that is as visually captivating as it is spiritually meaningful.",
-  //   technologies: ["React Native", "PostgreSQL", "Node.js", "Express"],
-  //   category: "React Native",
-  //   image: "/assets/dayding_screenshot.png",
-  //   link: "https://github.com/jera66/dayding-frontend",
-  //   featured: true,
-  // },
+ 
   {
     id: 3,
     name: "Rosathel PMS",
